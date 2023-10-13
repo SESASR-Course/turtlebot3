@@ -99,7 +99,8 @@ def generate_launch_description():
                 [
                     FindPackageShare('turtlebot3_description'),
                     'urdf',
-                    'turtlebot3_' + os.environ['TURTLEBOT3_MODEL'] + '.urdf.xacro'
+                    'turtlebot3_' +
+                    os.environ['TURTLEBOT3_MODEL'] + '.urdf.xacro'
                 ]
             ),
             ' ',
@@ -170,7 +171,8 @@ def generate_launch_description():
         namespace=namespace,
         package='controller_manager',
         executable='spawner',
-        arguments=['joint_state_broadcaster', '--controller-manager', '/controller_manager'],
+        arguments=['joint_state_broadcaster',
+                   '--controller-manager', '/controller_manager'],
         output='screen',
     )
 
@@ -180,7 +182,7 @@ def generate_launch_description():
         executable='spawner',
         arguments=['diff_drive_controller', '-c', '/controller_manager'],
         output='screen',
-        condition=UnlessCondition(use_sim)
+        # condition=UnlessCondition(use_sim)
     )
 
     imu_broadcaster_spawner = Node(

@@ -51,7 +51,7 @@
     </sensor>
   </gazebo>
 
-  <gazebo>
+  <!-- <gazebo>
     <plugin name='diff_drive' filename='libgazebo_ros_diff_drive.so'>
       <ros>
         <namespace></namespace>
@@ -71,6 +71,18 @@
       <odometry_frame>odom</odometry_frame>
       <robot_base_frame>base_footprint</robot_base_frame>
     </plugin>
+  </gazebo> -->
+
+  <gazebo>
+    <plugin name="gazebo_ros_p3d" filename="libgazebo_ros_p3d.so">
+        <ros>
+          <namespace></namespace>
+          <remapping>odom:=ground_truth</remapping>
+        </ros>
+        <body_name>base_footprint</body_name>
+        <frame_name>odom</frame_name>
+        <update_rate>20</update_rate>
+      </plugin>
   </gazebo>
 
   <gazebo reference="${prefix}base_scan">
