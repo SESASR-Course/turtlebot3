@@ -80,7 +80,7 @@
           <remapping>odom:=ground_truth</remapping>
         </ros>
         <body_name>base_footprint</body_name>
-        <frame_name>odom</frame_name>
+        <frame_name>world</frame_name>
         <update_rate>20</update_rate>
       </plugin>
   </gazebo>
