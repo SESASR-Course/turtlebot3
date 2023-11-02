@@ -126,6 +126,15 @@ def generate_launch_description():
             'hardware_controller_manager.yaml',
         ]
     )
+    
+    twist_mux_config = PathJoinSubstitution(
+        [
+            FindPackageShare('turtlebot3_bringup'),
+            'config',
+            os.environ['TURTLEBOT3_MODEL'],
+            'twist_mux.yaml',
+        ]
+    )
 
     rviz_config_file = PathJoinSubstitution(
         [
@@ -143,12 +152,17 @@ def generate_launch_description():
             {'robot_description': urdf_file},
             controller_manager_config
         ],
-        remappings=[
-            ('~/cmd_vel_unstamped', 'cmd_vel'),
-            ('~/odom', 'odom')
-        ],
         output="both",
         condition=UnlessCondition(use_sim))
+    
+    twist_mux_node = Node(
+        package='twist_mux',
+        executable='twist_mux',
+        name='twist_mux',
+        parameters=[twist_mux_config],
+        remappings={
+            ('/cmd_vel_out', '/diff_drive_controller/cmd_vel_unstamped')},
+    )
 
     robot_state_pub_node = Node(
         namespace=namespace,
@@ -218,6 +232,7 @@ def generate_launch_description():
 
     nodes = [
         control_node,
+        twist_mux_node,
         robot_state_pub_node,
         joint_state_broadcaster_spawner,
         delay_rviz_after_joint_state_broadcaster_spawner,

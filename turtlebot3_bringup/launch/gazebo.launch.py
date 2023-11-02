@@ -139,7 +139,6 @@ def generate_launch_description():
                 ]
             ),
             launch_arguments={
-                'verbose': 'false',
                 'world': world,
             }.items(),
         ),
