@@ -44,13 +44,13 @@
   <joint name="${prefix}wheel_left_joint" type="continuous">
     <parent link="${prefix}base_link"/>
     <child link="${prefix}wheel_left_link"/>
-    <origin xyz="0.0 0.08 0.023" rpy="-1.57 0 0"/>
+    <origin xyz="0.0 0.08 0.023" rpy="-1.57079632679 0 0"/>
     <axis xyz="0 0 1"/>
   </joint>
 
   <link name="${prefix}wheel_left_link">
     <visual>
-      <origin xyz="0 0 0" rpy="1.57 0 0"/>
+      <origin xyz="0 0 0" rpy="1.57079632679 0 0"/>
       <geometry>
         <mesh filename="${meshes_file_direction}/left_tire.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -76,13 +76,13 @@
   <joint name="${prefix}wheel_right_joint" type="continuous">
     <parent link="${prefix}base_link"/>
     <child link="${prefix}wheel_right_link"/>
-    <origin xyz="0.0 -0.080 0.023" rpy="-1.57 0 0"/>
+    <origin xyz="0.0 -0.080 0.023" rpy="-1.57079632679 0 0"/>
     <axis xyz="0 0 1"/>
   </joint>
 
   <link name="${prefix}wheel_right_link">
     <visual>
-      <origin xyz="0 0 0" rpy="1.57 0 0"/>
+      <origin xyz="0 0 0" rpy="1.57079632679 0 0"/>
       <geometry>
         <mesh filename="${meshes_file_direction}/right_tire.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -108,12 +108,12 @@
   <joint name="${prefix}caster_back_joint" type="fixed">
     <parent link="${prefix}base_link"/>
     <child link="${prefix}caster_back_link"/>
-    <origin xyz="-0.081 0 -0.004" rpy="-1.57 0 0"/>
+    <origin xyz="-0.081 0 -0.004" rpy="-1.57079632679 0 0"/>
   </joint>
 
   <link name="${prefix}caster_back_link">
     <collision>
-      <origin xyz="0 0.001 0" rpy="0 0 0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
         <box size="0.030 0.009 0.020"/>
       </geometry>
