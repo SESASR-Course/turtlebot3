@@ -1,7 +1,7 @@
 # SESASR Edit
 
 ## Installation
-To download the repository for simulaion purposes use the following command inside the root folder of your workspace (eg. `/workspaces/vscode_ros2_workspace` or `~/ros_ws`)
+To download the repository for simulation purposes use the following command inside the root folder of your workspace (eg. `/workspaces/vscode_ros2_workspace` or `~/ros_ws`)
 
 ```bash
 curl https://raw.githubusercontent.com/SESASR-Course/turtlebot3/humble-devel/turtlebot3_sim.repos | vcs import src
