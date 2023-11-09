@@ -1,3 +1,28 @@
+# SESASR Edit
+
+## Installaton
+To download the repository for simulaion purposes use the following command inside the root folder of your workspace (eg. `/workspaces/vscode_ros2_workspace` or `~/ros_ws`)
+
+```bash
+curl https://raw.githubusercontent.com/SESASR-Course/turtlebot3/humble-devel/turtlebot3_sim.repos | vcs import src
+```
+
+Then run sequentially these commands to install dependencies and build your workspace
+
+```bash
+sudo apt update
+rosdep update
+rosdep install --from-paths src --ignore-src -y
+colcon build --symlink-install
+```
+
+Run the simulation with
+
+```bash
+export TURTLEBOT3_MODEL=burger
+ros2 launch turtlebot3_bringup gazebo.launch.py
+```
+
 # TurtleBot3
 <img src="https://github.com/ROBOTIS-GIT/emanual/blob/master/assets/images/platform/turtlebot3/logo_turtlebot3.png" width="300">
 
