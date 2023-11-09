@@ -1,6 +1,6 @@
 # SESASR Edit
 
-## Installaton
+## Installation
 To download the repository for simulaion purposes use the following command inside the root folder of your workspace (eg. `/workspaces/vscode_ros2_workspace` or `~/ros_ws`)
 
 ```bash
