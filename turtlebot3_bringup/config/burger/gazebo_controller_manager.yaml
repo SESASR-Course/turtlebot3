@@ -74,3 +74,6 @@ imu_broadcaster:
     use_sim_time: True
     frame_id: imu_link
     sensor_name: imu
+    static_covariance_orientation: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    static_covariance_angular_velocity: [4.0e-6, 0.0, 0.0, 0.0, 4.0e-6, 0.0, 0.0, 0.0, 4.0e-6]
+    static_covariance_linear_acceleration: [3.0e-4, 0.0, 0.0, 0.0, 3.0e-4, 0.0, 0.0, 0.0, 3.0e-4]
